@@ -42,7 +42,7 @@ void EarliestFinishTime(Aula aulas[], int size) {
     for (int i = 0; i < size; i++) {
 
         if (aulas[i].startTime >= fimUltimaAula) {
-            printf("Aula: %s | %dh - %dh\n", 
+            printf("Aula: %-20s | %02dh - %02dh\n", 
                     aulas[i].name, aulas[i].startTime, aulas[i].endTime);
             
             fimUltimaAula = aulas[i].endTime; // Atualiza o marco de tempo

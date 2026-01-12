@@ -5,7 +5,7 @@
 void printList(Aula aulas[], int size){
     printf("---------------------------------------- \n");
     for (int value = 0; value <= size - 1; value++) {
-        printf(" Aula: %s, Start In: %d, Finish In: %d, Description: %s \n", 
+        printf(" Aula: %2s, Start In: %2d, Finish In: %2d, Description: %s \n", 
                aulas[value].name, aulas[value].startTime, aulas[value].endTime, aulas[value].description);
     }
     printf("----------------------------------------\n");
@@ -29,9 +29,8 @@ int main(int argc, char *argv[]){
     //   int size = sizeof(lista) / sizeof(lista[0]);
     int size = 8;
 
-    printList(lista, size);
-
     BurstTime(lista,  size);
+    printList(lista, size);
     ShortestJobFirst(lista,  size);
 
     BurstTimeFinal(lista,  size);

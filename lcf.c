@@ -37,9 +37,8 @@ void lastClassFinish(Aula aulas[], int size){
 
     for (int i = 0; i < size; i++) { 
         if (aulas[i].endTime <= primeiraAula) {
-            printf("Aula: %s | %dh - %dh\n, the aula Finish in %dh", aulas[i].name, 
-                   aulas[i].startTime,aulas[i].endTime, aulas[i].endTime);
-            
+            printf("Aula: %-20s | %02dh - %02dh | %15s %02dh\n", aulas[i].name, 
+                   aulas[i].startTime,aulas[i].endTime, "Finish In:", aulas[i].endTime);
             primeiraAula = aulas[i].startTime;
             total++;
         } 

@@ -52,8 +52,9 @@ void ShortestJobFirst(Aula aulas[], int size) {
 
         if(!conflito){
             selecionadas[i] = 1;
-            printf("Aula: %s | %dh - %dh (Duração: %dh)\n", 
-                    aulas[i].name, aulas[i].startTime, aulas[i].endTime, (aulas[i].endTime - aulas[i].startTime));
+            printf("Aula: %-20s | %02dh - %02dh %20s%dh)\n", 
+                    aulas[i].name, aulas[i].startTime, aulas[i].endTime, 
+                   "(Duration: ", (aulas[i].endTime - aulas[i].startTime));
             total++;
         }
     }
