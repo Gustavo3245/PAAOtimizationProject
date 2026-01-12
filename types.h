@@ -14,6 +14,6 @@ void BurstTime(Aula aulas[], int size);
 void ShortestJobFirst(Aula aulas[], int size);
 void BurstTimeFinal(Aula aulas[], int size);
 void EarliestFinishTime(Aula aulas[], int size);
-
+void BurstTimeLast(Aula aulas[], int size);
 
 #endif // !TYPES.H

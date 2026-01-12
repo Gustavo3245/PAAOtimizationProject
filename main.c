@@ -37,5 +37,8 @@ int main(int argc, char *argv[]){
     BurstTimeFinal(lista,  size);
     printList(lista, size);
     EarliestFinishTime(lista, size);
+
+    BurstTimeLast(lista, size);
+    printList(lista,  size);
     
 }
