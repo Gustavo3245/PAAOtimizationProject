@@ -40,5 +40,6 @@ int main(int argc, char *argv[]){
 
     BurstTimeLast(lista, size);
     printList(lista,  size);
+    lastClassFinish(lista, size);
     
 }
