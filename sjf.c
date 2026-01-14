@@ -1,5 +1,6 @@
 #include "types.h"
 #include <stdio.h>
+#include <time.h>
 
 
 // Shortest Job First
@@ -33,6 +34,7 @@ void BurstTime(Aula aulas[], int size) {
 void ShortestJobFirst(Aula aulas[], int size) {
     BurstTime(aulas, size);
 
+    clock_t start = clock();
     printf("--- Cronograma SJF (Mais curtas primeiro) ---\n");
 
     int selecionadas[100] = {0};
@@ -59,4 +61,8 @@ void ShortestJobFirst(Aula aulas[], int size) {
         }
     }
     printf("total de aulas possíveis: %d\n\n", total);
+    
+    clock_t end = clock();
+    double time = (double)(end - start) / CLOCKS_PER_SEC;
+    printf("Tempo de execução EFT: %.8f segundos \n", time);
 }

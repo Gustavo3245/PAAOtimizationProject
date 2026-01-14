@@ -1,5 +1,6 @@
 #include "types.h"
 #include <stdio.h>
+#include <time.h>
 
 
 // Last Class Finish
@@ -30,6 +31,8 @@ void BurstTimeLast(Aula aulas[], int size){
 void lastClassFinish(Aula aulas[], int size){
     BurstTimeLast(aulas, size);
 
+    clock_t start = clock();
+
     printf("--- Cronograma LCF (Terminam mais tarde) ---\n");
 
     int total = 0;
@@ -44,4 +47,8 @@ void lastClassFinish(Aula aulas[], int size){
         } 
     }
     printf("Total de aulas possiveis: %d \n\n", total);
+    
+    clock_t end = clock();
+    double time = (double)(end - start) / CLOCKS_PER_SEC;
+    printf("Tempo de execução EFT: %.8f segundos \n", time);
 }

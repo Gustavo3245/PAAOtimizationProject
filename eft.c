@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "types.h"
+#include <time.h>
 
 // Earliest Finish Time
 /* algoritmo responsável por sempre escolher a aula 
@@ -34,6 +35,8 @@ void BurstTimeFinal(Aula aulas[], int size) {
 void EarliestFinishTime(Aula aulas[], int size) {
     BurstTimeFinal(aulas,  size);
 
+    clock_t start = clock();
+
     printf("--- Cronograma EFT (Terminam mais cedo) ---\n");
 
     int total = 0;
@@ -51,5 +54,9 @@ void EarliestFinishTime(Aula aulas[], int size) {
     }
 
     printf("Total de aulas possíveis: %d\n\n", total);
+
+    clock_t end = clock();
+    double time = (double)(end - start) / CLOCKS_PER_SEC;
+    printf("Tempo de execução EFT: %.8f segundos \n", time);
 }
 
