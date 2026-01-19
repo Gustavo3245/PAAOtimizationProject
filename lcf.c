@@ -9,7 +9,7 @@
  * organizando a lista de aulas das que terminam por ultimo.
  * */
 
-void BurstTimeLast(Aula aulas[], int size){
+void lastClassOrganize(Aula aulas[], int size){
     if(size < 2) return;
 
     for (int i = 0; i < (size - 1); i++) {
@@ -29,7 +29,7 @@ void BurstTimeLast(Aula aulas[], int size){
 }
 
 void lastClassFinish(Aula aulas[], int size){
-    BurstTimeLast(aulas, size);
+    lastClassOrganize(aulas, size);
 
     clock_t start = clock();
 

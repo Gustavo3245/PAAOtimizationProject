@@ -10,12 +10,12 @@ typedef struct {
     char description[50];
 }Aula;
 
-void BurstTime(Aula aulas[], int size);
+
+void lastClassOrganize(Aula aulas[], int size);
+void EarliestFinishOrganize(Aula aulas[], int size);
+void ShortestJobOrganize(Aula aulas[], int size);
+
 void ShortestJobFirst(Aula aulas[], int size);
-void BurstTimeFinal(Aula aulas[], int size);
-void BurstTimeLast(Aula aulas[], int size);
 void lastClassFinish(Aula aulas[], int size);
-
-
 void EarliestFinishTime(Aula aulas[], int size);
 #endif // !TYPES.H

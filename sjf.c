@@ -13,7 +13,7 @@
  */
 
 
-void BurstTime(Aula aulas[], int size) {
+void ShortestJobOrganize(Aula aulas[], int size) {
 
     for (int i = 0; i < size - 1; i++) {
         
@@ -32,7 +32,7 @@ void BurstTime(Aula aulas[], int size) {
 }
 
 void ShortestJobFirst(Aula aulas[], int size) {
-    BurstTime(aulas, size);
+    ShortestJobOrganize(aulas, size);
 
     clock_t start = clock();
     printf("--- Cronograma SJF (Mais curtas primeiro) ---\n");
@@ -42,7 +42,6 @@ void ShortestJobFirst(Aula aulas[], int size) {
 
     for (int i = 0;  i < size; i++) {
         int conflito = 0;
-
         for (int j = 0; j < i; j++) {
             if(selecionadas[j]) {
                 if(aulas[i].startTime < aulas[j].endTime && aulas[i].endTime > aulas[j].startTime) {
@@ -51,7 +50,6 @@ void ShortestJobFirst(Aula aulas[], int size) {
                 }
             }
         }
-
         if(!conflito){
             selecionadas[i] = 1;
             printf("Aula: %-20s | %02dh - %02dh %20s%dh)\n", 

@@ -34,21 +34,39 @@ int main(int argc, char *argv[]){
         { "Interacao Homem-Computador", 8, 10, "description" },
         { "Diagrama de Componentes", 11, 13, "description" },
         { "Sistemas Distribuidos", 14, 16, "description" },
+        { "Engenharia Ambiental", 20, 22, "description"},
+        { "Engenharia de Pescal", 21, 23, "description"},
+        { "Engenharia costeira" , 19, 24, "description"},
+        { "Arquitetura de Computadores", 13, 15, "description" },
+        { "Compiladores", 15, 17, "description" },
+        { "Segurança de Sistemas", 17, 19, "description" },
+        { "Computação Gráfica", 18, 20, "description" },
+        { "Cálculo Numérico", 7, 9, "description" },
+        { "Lógica para Computação", 14, 16, "description" },
+        { "Empreendedorismo", 16, 18, "description" },
+        { "Ética e Computação", 18, 19, "description" },
+        { "Teoria da Computação", 19, 21, "description" },
+        { "Mineração de Dados", 20, 22, "description" },
+        { "Deep Learning", 15, 18, "description" },
+        { "Desenvolvimento Web", 13, 16, "description" },
+        { "Desenvolvimento Mobile", 9, 12, "description" },
+        { "Governança de TI", 19, 22, "description" },
+        { "Probabilidade e Estatística", 7, 10, "description" }
     };
 
     // quantidade de structs (elementos na lista);
     int size = sizeof(lista) / sizeof(lista[0]);
 
 
-    BurstTime(lista,  size);
+    ShortestJobOrganize(lista,  size);
     printList(lista, size);
     ShortestJobFirst(lista,  size);
 
-    BurstTimeFinal(lista,  size);
+    EarliestFinishOrganize(lista,  size);
     printList(lista, size);
     EarliestFinishTime(lista, size);
 
-    BurstTimeLast(lista, size);
+    lastClassOrganize(lista, size);
     printList(lista,  size);
     lastClassFinish(lista, size);
 }
