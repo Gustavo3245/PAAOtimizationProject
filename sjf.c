@@ -1,5 +1,6 @@
 #include "types.h"
 #include <stdio.h>
+#include <time.h>
 
 
 // Shortest Job First
@@ -12,7 +13,7 @@
  */
 
 
-void BurstTime(Aula aulas[], int size) {
+void ShortestJobOrganize(Aula aulas[], int size) {
 
     for (int i = 0; i < size - 1; i++) {
         
@@ -31,8 +32,9 @@ void BurstTime(Aula aulas[], int size) {
 }
 
 void ShortestJobFirst(Aula aulas[], int size) {
-    BurstTime(aulas, size);
+    ShortestJobOrganize(aulas, size);
 
+    clock_t start = clock();
     printf("--- Cronograma SJF (Mais curtas primeiro) ---\n");
 
     int selecionadas[100] = {0};
@@ -40,7 +42,6 @@ void ShortestJobFirst(Aula aulas[], int size) {
 
     for (int i = 0;  i < size; i++) {
         int conflito = 0;
-
         for (int j = 0; j < i; j++) {
             if(selecionadas[j]) {
                 if(aulas[i].startTime < aulas[j].endTime && aulas[i].endTime > aulas[j].startTime) {
@@ -49,13 +50,17 @@ void ShortestJobFirst(Aula aulas[], int size) {
                 }
             }
         }
-
         if(!conflito){
             selecionadas[i] = 1;
-            printf("Aula: %s | %dh - %dh (Duração: %dh)\n", 
-                    aulas[i].name, aulas[i].startTime, aulas[i].endTime, (aulas[i].endTime - aulas[i].startTime));
+            printf("Aula: %-20s | %02dh - %02dh %20s%dh)\n", 
+                    aulas[i].name, aulas[i].startTime, aulas[i].endTime, 
+                   "(Duration: ", (aulas[i].endTime - aulas[i].startTime));
             total++;
         }
     }
     printf("total de aulas possíveis: %d\n\n", total);
+    
+    clock_t end = clock();
+    double time = (double)(end - start) / CLOCKS_PER_SEC;
+    printf("Tempo de execução EFT: %.8f segundos \n", time);
 }
